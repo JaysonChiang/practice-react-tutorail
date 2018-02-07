@@ -117,7 +117,7 @@ class Game extends React.Component {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winnerSquares = calculateWinnerSquares(current.squares); //4. When someone wins, highlight the three squares that caused the win.
-        const winner = !!winnerSquares ? winnerSquares[0] : null;
+        const winner = !!winnerSquares ? current.squares[winnerSquares[0]] : null;
         //1. Display the location for each move in the format (col, row) in the move history list.
         let moves = history.map((step, move) => {
             let desc = move ?
